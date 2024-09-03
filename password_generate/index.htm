@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="contain">
+      <input type="text" id="password" />
+      <div class="checks">
+        <div>
+          <span>Sifre uzunlugu</span>
+          <input type="number" id="length" />
+        </div>
+        <div>
+          <span>Boyuk herf olsun</span>
+          <input type="checkbox" id="uppercase" />
+        </div>
+        <div>
+          <span>Kicik herf olsun</span>
+          <input type="checkbox" id="lowercase" />
+        </div>
+        <div>
+          <span>Reqem olsun</span>
+          <input type="checkbox" id="number" />
+        </div>
+        <div>
+          <span>Simvol olsun</span>
+          <input type="checkbox" id="symbol" />
+        </div>
+      </div>
+      <button onclick="yarat()">Yarat</button>
+    </div>
+
+    <script src="app.js "></script>
+  </body>
+</html>

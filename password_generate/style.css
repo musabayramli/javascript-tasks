@@ -1,0 +1,41 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    background: blueviolet;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.contain{
+    width: 400px;
+    padding: 10px;
+    background: #2c2c7a;
+    border-radius: 10px;
+}
+.checks >div{
+    padding:8px 0 ;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1.2rem;
+    color: #fff;
+}
+#length{
+    width: 45px;
+}
+input{
+    outline: none;
+}
+#password,button{
+    padding: 10px;
+    width: 100%;
+}
+button{
+    background: black;
+    color: #a19a9a;
+    border: none;
+}
