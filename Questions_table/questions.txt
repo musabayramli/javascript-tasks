@@ -1,0 +1,29 @@
+1. Arrayı " --- " simvolları ilə birləşdirilmiş string halına gətirin
+   - Array: ["Pen", "Pencil", "Eraser", "Sharpener", "Ruler"]
+
+2. Arrayda təkrarlanan elementləri silin
+   - Array: ["orange", "banana", "banana", "apple", "apple", "mango"]
+
+3. İki ədəd arasında 5-ə bölünən ədədlərin arrayını qaytarın
+   - Interval: 15 - 50
+
+4. Parametrin obyekt olub olmadığını yoxlayın
+   - Object: { name: "John", age: 30 }
+
+5. Arrayda ən böyük və ən kiçik ədədi tapın
+   - Array: [23, 78, 56, 12, 89, 44, 91]
+
+6. Arraydə ən kiçik və ən böyük elementi tapmaq (min və max istifadə etmədən)
+   - Array: [23, 78, 56, 12, 89, 44, 91]
+
+7. Daxilində "e" və ya "E" hərfi olan sözləri göstərin
+   - Array: ["David", "Emily", "Sophia", "Eric", "Oliver"]
+
+8. Arrayı aşağıdakı hala gətirin (["Item", uzunluq])
+   - Array: ["Laptop", "Tablet", "Phone", "Monitor"]
+
+9. Seçim cümlələri yaradın
+   - Array: ["Pink", "White", "Grey", "Black"]
+
+10. 8 elementli, hər birində 1 olan array qaytaran funksiya
+   - Array Length: 8, Value: 1

@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="az">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>JavaScript Taskları</title>
+  </head>
+  <body>
+    <h1>JavaScript (Arrey) Taskları</h1>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Task və Array</th>
+          <th>Kod</th>
+          <th>Nəticə</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td data-label="Task və Array">
+            Arrayı " --- " simvolları ilə birləşdirilmiş string halına gətirin
+            <br /><strong>Array:</strong> ["Pen", "Pencil", "Eraser",
+            "Sharpener", "Ruler"]
+          </td>
+          <td data-label="Kod">
+            <button onclick="toggleCode(1)">Kodu Göstər</button>
+            <div id="code1" class="code-block">
+              <pre><code>
+let arr1 = ["Pen", "Pencil", "Eraser", "Sharpener", "Ruler"];
+let joinedString = arr1.join('---');
+document.getElementById("result1").textContent = joinedString;
+                        </code></pre>
+            </div>
+          </td>
+          <td data-label="Nəticə">
+            <div id="result1" class="result-block"></div>
+          </td>
+        </tr>
+        <tr>
+          <td data-label="Task və Array">
+            Arrayda təkrarlanan elementləri silin
+            <br /><strong>Array:</strong> ["orange", "banana", "banana",
+            "apple", "apple", "mango"]
+          </td>
+          <td data-label="Kod">
+            <button onclick="toggleCode(2)">Kodu Göstər</button>
+            <div id="code2" class="code-block">
+              <pre><code>
+let arr2 = ["orange", "banana", "banana", "apple", "apple", "mango"];
+let uniqueArray = [];
+arr2.forEach(item => {
+    if (!uniqueArray.includes(item)) {
+        uniqueArray.push(item);
+    }
+});
+document.getElementById("result2").textContent = uniqueArray.join(", ");
+                        </code></pre>
+            </div>
+          </td>
+          <td data-label="Nəticə">
+            <div id="result2" class="result-block"></div>
+          </td>
+        </tr>
+        <tr>
+          <td data-label="Task və Array">
+            İki ədəd arasında 5-ə bölünən ədədlərin arrayını qaytarın
+            <br /><strong>Interval:</strong> 15 - 50
+          </td>
+          <td data-label="Kod">
+            <button onclick="toggleCode(3)">Kodu Göstər</button>
+            <div id="code3" class="code-block">
+              <pre><code>
+function divisibleByFive(start, end) {
+    let result = [];
+    for (let i = start; i <= end; i++) {
+        if (i % 5 === 0) {
+            result.push(i);
+        }
+    }
+    return result;
+}
+document.getElementById("result3").textContent = divisibleByFive(15, 50).join(", ");
+                        </code></pre>
+            </div>
+          </td>
+          <td data-label="Nəticə">
+            <div id="result3" class="result-block"></div>
+          </td>
+        </tr>
+        <tr>
+          <td data-label="Task və Array">
+            Parametrin obyekt olub olmadığını yoxlayın
+            <br /><strong>Object:</strong> { name: "John", age: 30 }
+          </td>
+          <td data-label="Kod">
+            <button onclick="toggleCode(4)">Kodu Göstər</button>
+            <div id="code4" class="code-block">
+              <pre><code>
+function isObject(input) {
+    return typeof input === 'object' && !Array.isArray(input) && input !== null;
+}
+let result4 = isObject({ name: "John", age: 30 });
+document.getElementById("result4").textContent = result4;
+                        </code></pre>
+            </div>
+          </td>
+          <td data-label="Nəticə">
+            <div id="result4" class="result-block"></div>
+          </td>
+        </tr>
+        <tr>
+          <td data-label="Task və Array">
+            Arrayda ən böyük və ən kiçik ədədi tapın
+            <br /><strong>Array:</strong> [23, 78, 56, 12, 89, 44, 91]
+          </td>
+          <td data-label="Kod">
+            <button onclick="toggleCode(5)">Kodu Göstər</button>
+            <div id="code5" class="code-block">
+              <pre><code>
+let arr3 = [23, 78, 56, 12, 89, 44, 91];
+let min = arr3[0];
+let max = arr3[0];
+
+arr3.forEach(num => {
+    if (num < min) min = num;
+    if (num > max) max = num;
+});
+document.getElementById("result5").textContent =
+    "Ən kiçik: " + min + ", Ən böyük: " + max;
+                        </code></pre>
+            </div>
+          </td>
+          <td data-label="Nəticə">
+            <div id="result5" class="result-block"></div>
+          </td>
+        </tr>
+        <tr>
+          <td data-label="Task və Array">
+            Arraydə ən kiçik və ən böyük elementi tapmaq (min və max istifadə
+            etmədən)
+            <br /><strong>Array:</strong> [23, 78, 56, 12, 89, 44, 91]
+          </td>
+          <td data-label="Kod">
+            <button onclick="toggleCode(6)">Kodu Göstər</button>
+            <div id="code6" class="code-block">
+              <pre><code>
+function findMinMax(arr) {
+    let min = arr[0];
+    let max = arr[0];
+
+    arr.forEach(num => {
+        if (num < min) min = num;
+        if (num > max) max = num;
+    });
+
+    return { min, max };
+}
+
+let arr6 = [23, 78, 56, 12, 89, 44, 91];
+let result = findMinMax(arr6);
+document.getElementById("result6").textContent =
+    "Ən kiçik: " + result.min + ", Ən böyük: " + result.max;
+                        </code></pre>
+            </div>
+          </td>
+          <td data-label="Nəticə">
+            <div id="result6" class="result-block"></div>
+          </td>
+        </tr>
+        <tr>
+          <td data-label="Task və Array">
+            Daxilində "e" və ya "E" hərfi olan sözləri göstərin
+            <br /><strong>Array:</strong> ["David", "Emily", "Sophia", "Eric",
+            "Oliver"]
+          </td>
+          <td data-label="Kod">
+            <button onclick="toggleCode(7)">Kodu Göstər</button>
+            <div id="code7" class="code-block">
+              <pre><code>
+let arr4 = ["David", "Emily", "Sophia", "Eric", "Oliver"];
+let wordsWithE = arr4.filter(word => word.toLowerCase().includes('e'));
+document.getElementById("result7").textContent = wordsWithE.join(", ");
+                        </code></pre>
+            </div>
+          </td>
+          <td data-label="Nəticə">
+            <div id="result7" class="result-block"></div>
+          </td>
+        </tr>
+        <tr>
+          <td data-label="Task və Array">
+            Arrayı aşağıdakı hala gətirin (["Item", uzunluq])
+            <br /><strong>Array:</strong> ["Laptop", "Tablet", "Phone",
+            "Monitor"]
+          </td>
+          <td data-label="Kod">
+            <button onclick="toggleCode(8)">Kodu Göstər</button>
+            <div id="code8" class="code-block">
+              <pre><code>
+let arr5 = ["Laptop", "Tablet", "Phone", "Monitor"];
+let transformedArray = arr5.map(item => [item, item.length]);
+document.getElementById("result8").textContent =
+    JSON.stringify(transformedArray);
+                        </code></pre>
+            </div>
+          </td>
+          <td data-label="Nəticə">
+            <div id="result8" class="result-block"></div>
+          </td>
+        </tr>
+        <tr>
+          <td data-label="Task və Array">
+            Seçim cümlələri yaradın
+            <br /><strong>Array:</strong> ["Pink", "White", "Grey", "Black"]
+          </td>
+          <td data-label="Kod">
+            <button onclick="toggleCode(9)">Kodu Göstər</button>
+            <div id="code9" class="code-block">
+              <pre><code>
+let color = ["Pink", "White", "Grey", "Black"];
+let index = ["st", "nd", "rd", "th"];
+let choices = color.map((c, i) => (i + 1) + (index[i] || "th") + " choice is " + c + ".");
+document.getElementById("result9").textContent = choices.join(" ");
+                        </code></pre>
+            </div>
+          </td>
+          <td data-label="Nəticə">
+            <div id="result9" class="result-block"></div>
+          </td>
+        </tr>
+        <tr>
+          <td data-label="Task və Array">
+            8 elementli, hər birində 1 olan array qaytaran funksiya
+            <br /><strong>Array Length:</strong> 8, <strong>Value:</strong> 1
+          </td>
+          <td data-label="Kod">
+            <button onclick="toggleCode(10)">Kodu Göstər</button>
+            <div id="code10" class="code-block">
+              <pre><code>
+function array_filled(length, value) {
+    return new Array(length).fill(value);
+}
+let result10 = array_filled(8, 1);
+document.getElementById("result10").textContent = result10.join(", ");
+                        </code></pre>
+            </div>
+          </td>
+          <td data-label="Nəticə">
+            <div id="result10" class="result-block"></div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <script src="app.js"></script>
+  </body>
+</html>
