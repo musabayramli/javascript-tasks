@@ -1,0 +1,66 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+}
+.container {
+    display: flex;
+    width: 90vw;
+}
+.panel {
+    height: 80vh;
+    border-radius: 50px;
+    color: #fff;
+    cursor: pointer;
+    flex: 0.5;
+    margin: 10px;
+    position: relative;
+    transition: flex 0.7s ease-in;
+}
+.panel h3 {
+    font-size: 24px;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    opacity: 0;
+}
+.panel.active {
+    flex: 5;
+}
+.panel.active h3 {
+    color: #4c0707;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+.card1 {
+    background: url(img/captain-america-4th-of-july.webp) center/cover;
+}
+.card2 {
+    background: url(img/images.jfif) center/cover;
+}
+.card3 {
+    background: url(img/images1.jfif) center/cover;
+}
+.card4 {
+    background: url(img/images2.jfif) center/cover;
+}
+.card5 {
+    background: url(img/images3.jfif) center/cover;
+}
+
+@media (max-width: 480px) {
+    .container {
+        width: 100%;
+    }
+    .panel:nth-of-type(4),
+    .panel:nth-of-type(5) {
+        display: none;
+    }
+}
