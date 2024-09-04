@@ -1,0 +1,13 @@
+const students = [
+    { name: 'Aqsin', grades: [80, 90, 70] },
+    { name: 'Musa', grades: [32, 17, 92] },
+    { name: 'David', grades: [78, 82, 88] },
+    { name: 'Esmer', grades: [17, 89, 34] },
+    { name: 'Zahid', grades: [90, 91, 95] },
+    { name: 'Guler', grades: [90, 98, 99] },
+    { name: 'Ramile', grades: [78, 65, 88] },
+    {name: 'Aysel', grades: [89,91,79]},
+    {name: 'Leman',grades: [92,89,73]},
+    {name: 'Qara', grades: [51,68,89]},
+    {name: 'B.Eli',grades: [92,89,78]}
+];
