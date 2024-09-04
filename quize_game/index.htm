@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="az">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz Game</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="quiz-container">
+      <h1>Quiz Game</h1>
+      <div id="quiz">
+        <div id="question"></div>
+        <div id="choices"></div>
+        <div id="timer">Qalan vaxt: <span id="time">10</span> saniyə</div>
+        <button id="start-btn" onclick="startQuiz()">Başla</button>
+        <button id="stop-btn" onclick="stopQuiz()">Stop</button>
+        <button id="continue-btn" onclick="continueQuiz()">Cantinous</button>
+        <button id="next-btn" onclick="nextQuestion()">Next</button>
+      </div>
+      <div id="result" class="hidden">
+        <h2>Nəticəniz:</h2>
+        <p id="score"></p>
+        <button onclick="restartQuiz()">Quizə Yenidən Başla</button>
+      </div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
