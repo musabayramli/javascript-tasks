@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <style>
+      .error-msg {
+        color: red;
+        font-size: 0.875rem;
+      }
+    </style>
+    <title>Student Form</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="row justify-content-center align-items-center" style="height: 80vh;">
+        <div class="col-lg-6 col-md-8 col-sm-10">
+          <form
+            id="studentForm"
+            class="border border-2 border-dark-subtle p-4 rounded"
+          >
+            <div class="mb-3">
+              <label for="ad" class="form-label fs-5">Ad:</label>
+              <input type="text" id="ad" class="form-control" />
+              <div id="adError" class="error-msg"></div>
+            </div>
+            <div class="mb-3">
+              <label for="soyad" class="form-label fs-5">Soyad:</label>
+              <input type="text" id="soyad" class="form-control" />
+              <div id="soyadError" class="error-msg"></div>
+            </div>
+            <div class="mb-3">
+              <label for="mail" class="form-label fs-5">E-mail:</label>
+              <input type="email" id="mail" class="form-control" />
+              <div id="mailError" class="error-msg"></div>
+            </div>
+            <div class="text-center">
+              <button class="btn btn-outline-danger py-2 px-5">Göndər</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <h1 class="my-3 text-center fst-italic">Tələbələrin siyahısı</h1>
+    <table class="table table-striped table-responsive">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Ad</th>
+          <th>Soyad</th>
+          <th>E-mail ünvanı</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+    <script src="app.js"></script>
+  </body>
+</html>
