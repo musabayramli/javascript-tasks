@@ -1,0 +1,123 @@
+body {
+    background: linear-gradient(135deg, #1e3c72, #2a5298); 
+    font-family: "Arial", sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    background-size: 400% 400%;
+    animation: gradientAnimation 8s ease infinite;
+  }
+  
+  /* Gradient rəng animasiyası */
+  @keyframes gradientAnimation {
+    0% {
+      background-position: 0% 50%;
+      background: linear-gradient(135deg, #1e3c72, #2a5298); 
+    }
+    25% {
+      background-position: 50% 50%;
+      background: linear-gradient(135deg, #232526, #414345); 
+    }
+    50% {
+      background-position: 100% 50%;
+      background: linear-gradient(135deg, #3a1c71, #db182c, #ffaf7b); 
+    }
+    75% {
+      background-position: 50% 50%;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); 
+    }
+    100% {
+      background-position: 0% 50%;
+      background: linear-gradient(135deg, #1e3c72, #2a5298); 
+    }
+  }
+  
+  .search-container {
+    background: rgba(0, 0, 0, 0.7); 
+    border-radius: 20px;
+    box-shadow: 0px 10px 20px #00000066; 
+    padding: 30px;
+    max-width: 700px;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    transition: box-shadow 0.5s ease;
+  }
+  
+  .search-container:hover,
+  .search-container:focus-within {
+    box-shadow: 0px 20px 40px #007bff99; 
+  }
+  
+  .form-control {
+    border-radius: 50px;
+    height: 50px;
+    padding: 0 20px;
+    width: 100%;
+    margin-bottom: 20px;
+    border: none;
+    background: #ffffff33;
+    color: #fff;
+    backdrop-filter: blur(5px);
+  }
+  
+  .form-control::placeholder {
+    color: #ddd;
+  }
+  
+  .btn {
+    border-radius: 50px;
+    height: 50px;
+    padding: 0 40px;
+    font-size: 1.1rem;
+    background: linear-gradient(45deg, #0f2027, #203a43, #2c5364); 
+    color: #fff;
+    width: 100%;
+    border: none;
+    box-shadow: 0px 10px 20px #00000033;
+    transition: all 0.3s ease;
+  }
+  
+  .btn:hover {
+    background: linear-gradient(45deg, #203a43, #0f2027);
+    box-shadow: 0px 15px 30px #0072ff66;
+    transform: translateY(-3px);
+  }
+  
+  #demo {
+    line-height: 1.8;
+    color: #ddd;
+  }
+  
+  #demo span {
+    background-color: #007bff; 
+    padding: 2px 6px;
+    border-radius: 4px;
+    color: #fff;
+  }
+  
+  /* Media query for smaller screens */
+  @media (max-width: 576px) {
+    body {
+      height: auto;
+    }
+  
+    .search-container {
+      max-width: 90%;
+      padding: 20px;
+      background: #00000049;
+    }
+  
+    .form-control {
+      font-size: 1rem;
+      height: auto;
+    }
+  
+    .btn {
+      font-size: 1rem;
+      height: auto;
+      padding: 10px 20px;
+    }
+  }
+  
