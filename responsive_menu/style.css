@@ -1,0 +1,318 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    color: white;
+    box-shadow: 0 0 10px #333;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+nav {
+    display: flex;
+}
+
+.menu {
+    display: flex;
+    list-style: none;
+}
+
+.menu li {
+    position: relative;
+    margin-right: 20px;
+}
+
+li i {
+    margin-left: 5px;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+    position: relative;
+}
+
+/* Hover zamanı qırmızı xətt */
+.menu a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 3px;
+    background-color: #ff4d4d;
+    transition: width 0.3s ease;
+}
+
+.menu a:hover::after {
+    width: 100%;
+}
+
+/* Dropdown başlığı və ikonu */
+.dropdown a {
+    display: inline-flex;
+    align-items: center;
+}
+
+.dropdown i {
+    margin-left: 5px;
+    transition: transform 0.3s ease;
+}
+
+.dropdown:hover i {
+    transform: rotate(180deg);
+}
+
+/* Dropdown menyu */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #0b6dc9;
+    min-width: 150px;
+    list-style: none;
+    z-index: 999;
+}
+
+/* Desktop görünüşündə hover zamanı açılır */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content li {
+    border-bottom: 1px solid #444;
+    width: 100%;
+}
+
+.dropdown-content a {
+    padding: 10px;
+    display: block;
+    color: white;
+}
+
+.dropdown-content a:hover {
+    background-color: #09bfdf;
+}
+
+/* Burger menyu (mobil üçün) */
+.burger {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 25px;
+    z-index: 10001;
+}
+
+.burger div {
+    width: 30px;
+    height: 4px;
+    background-color: white;
+    transition: all 0.3s ease;
+}
+
+/* Mobil üçün uyğunlaşdırma */
+@media (max-width: 768px) {
+    .burger {
+        display: flex;
+    }
+
+    .menu {
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: transparent;
+        width: 100%;
+        height: 100vh;
+        display: none;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .menu.active {
+        display: flex;
+    }
+
+    .menu li {
+        opacity: 0;
+        animation: slideIn 0.5s forwards;
+        background-color: #000000b3;
+        padding: 10px 20px;
+        margin: 10px 0;
+        border-radius: 5px;
+        width: 90%;
+        text-align: center;
+    }
+
+    .menu.active li {
+        opacity: 1;
+    }
+
+    .menu li,
+    .dropdown-content li {
+        opacity: 0;
+        animation: slideIn 0.5s forwards;
+        background-color: #000000b3;
+        padding: 10px 20px;
+        margin: 10px 0;
+        border-radius: 5px;
+        width: 90%;
+        text-align: center;
+    }
+
+    /* Mobil üçün dropdown açıldıqda göstərilir */
+    .dropdown-content {
+        position: static;
+        background-color: transparent;
+        padding: 0;
+        margin-top: 10px;
+        width: 100%;
+        display: none;
+    }
+
+    .dropdown.active .dropdown-content {
+        display: block; 
+    }
+
+    .dropdown-content li:nth-child(1) {
+        animation-delay: 0.1s;
+    }
+
+    .dropdown-content li:nth-child(2) {
+        animation-delay: 0.2s;
+    }
+
+    .dropdown-content li:nth-child(3) {
+        animation-delay: 0.3s;
+    }
+
+    /* Hər bir li elementin gecikmə ilə animasiya edilməsi */
+    .menu.active li:nth-child(1) {
+        animation-delay: 0.1s;
+    }
+
+    .menu.active li:nth-child(2) {
+        animation-delay: 0.2s;
+    }
+
+    .menu.active li:nth-child(3) {
+        animation-delay: 0.3s;
+    }
+
+    .menu.active li:nth-child(4) {
+        animation-delay: 0.4s;
+    }
+
+    main {
+        text-align: center;
+    }
+
+    .centered-text {
+        font-size: 2rem;
+    }
+}
+
+/* Animasiya */
+@keyframes slideIn {
+    0% {
+        transform: translateX(100%);
+        opacity: 0;
+        visibility: visible;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Burger düyməsi üçün transformasiya */
+.toggle .line1 {
+    transform: rotate(-45deg) translate(-7px, 5px);
+}
+
+.toggle .line2 {
+    opacity: 0;
+}
+
+.toggle .line3 {
+    transform: rotate(45deg) translate(-10px, -8px);
+}
+
+/* Main içindəki yazıya xüsusi effektlər */
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 89vh;
+}
+
+.centered-text {
+    font-family: "Pacifico", cursive;
+    font-size: 3.5rem;
+    color: white;
+    text-shadow: 2px 2px 10px #00000066;
+    animation:
+        color-change 2s infinite alternate,
+        shadow-fade 1s infinite alternate;
+}
+
+/* Rəng dəyişikliyi animasiyası */
+@keyframes color-change {
+    0% {
+        color: #ff4d4d;
+    }
+    100% {
+        color: #00c4ff;
+    }
+}
+
+/* Kölgə effektli animasiya */
+@keyframes shadow-fade {
+    0% {
+        text-shadow: 2px 2px 10px #00000066;
+    }
+
+    100% {
+        text-shadow: 4px 4px 20px #000000cc;
+    }
+}
+
+/* body arxa fonu üçün gradient animasiyası */
+body {
+    background: linear-gradient(135deg, #ff4d4d, #ffad33, #00c4ff);
+    background-size: 400% 400%;
+    animation: gradient-animation 10s ease infinite;
+}
+
+@keyframes gradient-animation {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
