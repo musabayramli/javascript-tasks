@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="az">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Interaktiv Testlər</title>
+   <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <h1>Testlər və Nəticələr</h1>
+    <div class="grid-container">
+
+      <!-- FizzBuzz -->
+      <div class="container">
+        <h2>FizzBuzz Testi</h2>
+        <p>Bu testdə 1-dən 100-ə qədər olan rəqəmlər yoxlanılır:</p>
+        <ul>
+          <li>Əgər rəqəm həm 3-ə, həm də 5-ə bölünürsə, "FizzBuzz" qaytarılır.</li>
+          <li>Əgər yalnız 3-ə bölünürsə, "Fizz" qaytarılır.</li>
+          <li>Əgər yalnız 5-ə bölünürsə, "Buzz" qaytarılır.</li>
+          <li>Digər hallarda isə rəqəmin özü qaytarılır.</li>
+        </ul>
+        <button onclick="runFizzBuzz()">Testi İşə Sal (İlk 30)</button>
+        <div class="output" id="fizzbuzz-output"></div>
+        <div class="button-container">
+          <button id="load-more" onclick="showMoreFizzBuzz()">Növbəti</button>
+          <button id="close-results" onclick="closeFizzBuzzResults()">Bağla</button>
+        </div>
+      </div>
+
+      <!-- SumRange -->
+      <div class="container">
+        <h2>SumRange Testi</h2>
+        <p>Bu testdə istifadəçi iki rəqəm daxil edir və bu iki rəqəm də daxil olmaqla aralarındakı bütün rəqəmlərin cəmi hesablanır.</p>
+        <form id="sumrange-form">
+          <label>Başlanğıc:</label>
+          <input type="number" id="start" placeholder="Başlanğıc nöqtəsi" required />
+          <label>Son:</label>
+          <input type="number" id="end" placeholder="Son nöqtə" required />
+          <button type="button" onclick="runSumRange()">SumRange Hesabla</button>
+        </form>
+        <div class="output" id="sumrange-output"></div>
+      </div>
+
+      <!-- Login Check -->
+      <div class="container">
+        <h2>Login Testi</h2>
+        <p>Bu testdə istifadəçi adı və şifrə daxil edilir və aşağıdakı yoxlamalar aparılır:</p>
+        <ul>
+          <li>İstifadəçi adı ən azı 3 hərfdən ibarət olmalıdır.</li>
+          <li>Şifrə ən azı bir böyük hərf, bir simvol və ən azı 8 simvol daxil etməlidir (!@#$%^&*()).</li>
+        </ul>
+        <form id="login-form">
+          <label>İstifadəçi adı:</label>
+          <input type="text" id="username" placeholder="İstifadəçi adı" required />
+          <label>Şifrə:</label>
+          <div class="password-container">
+            <input type="password" id="password" placeholder="Şifrə" required />
+            <span class="password-toggle" onclick="togglePassword()">👁️</span> 
+          </div>
+          <button type="button" onclick="runCheckLogin()">Login Testi</button>
+        </form>
+        <div class="output" id="login-output"></div>
+      </div>
+    </div>
+<script src="app.js"></script>
+  </body>
+</html>
