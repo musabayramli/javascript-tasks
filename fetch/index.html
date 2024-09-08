@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Canlı Hava Proqnozu</title>
+  <!-- Font Awesome iconları və Google Fonts əlavə edirik -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="video-background">
+    <video autoplay muted loop id="bg-video">
+      <source src="video/video.mp4" type="video/mp4">
+      Sizin brauzeriniz video göstərməni dəstəkləmir.
+    </video>
+    <div class="overlay"></div>
+  </div>
+
+  <div class="container">
+    <h1 class="animate-title">Canlı Hava Proqnozu</h1>
+    <input type="text" id="city-input" placeholder="Şəhər adını daxil edin">
+    <button id="search-btn">Axtar</button>
+
+    <!-- Hava proqnozu bölməsi -->
+    <div id="weather-container">
+      <h2 id="city-name"></h2>
+      <p id="weather-description"></p>
+      
+      <!-- Iconlar və məlumatlar ilk başda gizlədilir (hidden sinifi ilə) -->
+      <p id="temperature" class="hidden"><i class="fas fa-thermometer-half"></i> <span></span></p>
+      <p id="feels-like" class="hidden"><i class="fas fa-temperature-low"></i> <span></span></p>
+      <p id="humidity" class="hidden"><i class="fas fa-tint"></i> <span></span></p>
+      <p id="wind-speed" class="hidden"><i class="fas fa-wind"></i> <span></span></p>
+    </div>
+  </div>
+
+  <!-- Təbiət səsi -->
+  <audio id="nature-sound" loop>
+    <source src="video/voice.mp3" type="audio/mpeg">
+    Sizin brauzeriniz audio elementini dəstəkləmir.
+  </audio>
+
+  <!-- Səsi idarə etmək üçün düymə -->
+  <button id="sound-toggle" class="sound-control">
+    <i class="fas fa-volume-mute"></i> <!-- İlk başda səs iconu -->
+  </button>
+
+  <script src="app.js"></script>
+</body>
+</html>
