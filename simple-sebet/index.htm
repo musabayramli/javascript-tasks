@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="az">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Onlayn Alış-Veriş Səbəti</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Onlayn Alış-Veriş Səbəti</h1>
+      <div class="products">
+        <div class="product">
+          <h2>Product 1</h2>
+          <p>Price: $10</p>
+          <button onclick="addToCart('Product 1', 10)">Səbətə əlavə et</button>
+        </div>
+        <div class="product">
+          <h2>Product 2</h2>
+          <p>Price: $20</p>
+          <button onclick="addToCart('Product 2', 20)">Səbətə əlavə et</button>
+        </div>
+        <div class="product">
+          <h2>Product 3</h2>
+          <p>Price: $30</p>
+          <button onclick="addToCart('Product 3', 30)">Səbətə əlavə et</button>
+        </div>
+        <div class="product">
+          <h2>Product 4</h2>
+          <p>Price: $40</p>
+          <button onclick="addToCart('Product 4', 40)">Səbətə əlavə et</button>
+        </div>
+        <div class="product">
+          <h2>Product 5</h2>
+          <p>Price: $50</p>
+          <button onclick="addToCart('Product 5', 50)">Səbətə əlavə et</button>
+        </div>
+        <div class="product">
+          <h2>Product 6</h2>
+          <p>Price: $60</p>
+          <button onclick="addToCart('Product 6', 60)">Səbətə əlavə et</button>
+        </div>
+      </div>
+      <div class="cart-icon" onclick="toggleCart()">
+        🛒<span id="cart-count" class="cart-count">0</span>
+      </div>
+    </div>
+
+    <div id="cart-popup" class="cart-popup">
+      <div class="cart-content">
+        <span class="close" onclick="toggleCart()">&times;</span>
+        <h2>Sizin Səbətiniz</h2>
+        <ul id="cart-items"></ul>
+        <p>Total: $<span id="total">0</span></p>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
