@@ -1,0 +1,64 @@
+:root{
+    --gradient-start: #106268;
+    --gradient-end: #d85c23;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 10px;
+}
+
+body {
+    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+    background-size: 400% 400%;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: white;
+    transition: background 2s ease;
+}
+
+.container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 3rem;
+    width: 80%;
+}
+
+.section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    position: relative;
+}
+
+.section i {
+    font-size: 6rem;
+    padding: 2rem;
+    border-radius: 50%;
+    transition: background 2s ease;
+}
+
+.section h4 {
+    font-size: 1.5rem;
+}
+
+.section h2 {
+    font-size: 3rem;
+}
+
+@media (max-width: 480px) {
+    .container {
+        flex-direction: column;
+    }
+}
