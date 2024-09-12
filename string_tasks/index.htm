@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="az">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript Tapşırıqları</title>
+    <link rel="stylesheet" href="style.css" />
+
+  </head>
+  <body>
+    <h1>JavaScript Tapşırıqları</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>Tapşırıq və String</th>
+          <th>Kod</th>
+          <th>Nəticə</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- 1. Verilmiş stringdə ən uzun sözü tapır -->
+        <tr>
+          <td data-label="Tapşırıq və String">
+            Tapşırıq 1: Verilmiş stringdə ən uzun sözü tapır <br /><strong>String:</strong>
+            Salam Azerbaycan
+          </td>
+          <td data-label="Kod">
+            <button onclick="toggleCode(1)">Kodu Göstər</button>
+            <div id="code1" class="code-block">
+              <pre><code>
+function findLongestWord(str) {
+  return str.split(/\s+/).reduce((longest, currentWord) =>
+    currentWord.length > longest.length ? currentWord : longest, "");
+}
+console.log(findLongestWord("Salam Azerbaycan"));
+              </code></pre>
+            </div>
+          </td>
+          <td data-label="Nəticə">
+            <div id="result1" class="result-block"></div>
+          </td>
+        </tr>
+
+        <!-- 2. Verilmiş cümləni CamelCase formatına çevirir -->
+        <tr>
+          <td data-label="Tapşırıq və String">
+            Tapşırıq 2: Verilmiş cümləni CamelCase formatına çevirir <br /><strong
+              >String:</strong
+            >
+            frontend inkişaf çox maraqlıdır
+          </td>
+          <td data-label="Kod">
+            <button onclick="toggleCode(2)">Kodu Göstər</button>
+            <div id="code2" class="code-block">
+              <pre><code>
+function toCamelCase(str) {
+  return str.toLowerCase().split(/\s+/)
+    .map((word, index) => index === 0 ? word : word[0].toUpperCase() + word.slice(1))
+    .join("");
+}
+console.log(toCamelCase("frontend inkişaf çox maraqlıdır"));
+              </code></pre>
+            </div>
+          </td>
+          <td data-label="Nəticə">
+            <div id="result2" class="result-block"></div>
+          </td>
+        </tr>
+
+        <!-- 3. Verilmiş cümlədəki Palindrom sözləri tapır -->
+        <tr>
+          <td data-label="Tapşırıq və String">
+            Tapşırıq 3: Verilmiş cümlədəki Palindrom sözləri tapır <br /><strong
+              >String:</strong
+            >
+            Ana və level ll aa a lalə palindrom sözlərdir, amma hello deyil
+          </td>
+          <td data-label="Kod">
+            <button onclick="toggleCode(3)">Kodu Göstər</button>
+            <div id="code3" class="code-block">
+              <pre><code>
+function findPalindromesInSentence(sentence) {
+  const words = sentence.toLowerCase().split(/\s+/);
+  return words.filter(word => {
+    const cleanedWord = word.replace(/[^a-z0-9ə]/g, "");
+    const reversedWord = cleanedWord.split("").reverse().join("");
+    return cleanedWord.length > 0 && cleanedWord === reversedWord;
+  });
+}
+console.log(findPalindromesInSentence("Ana və level ll aa a lalə palindrom sözlərdir, amma hello deyil"));
+              </code></pre>
+            </div>
+          </td>
+          <td data-label="Nəticə">
+            <div id="result3" class="result-block"></div>
+          </td>
+        </tr>
+
+        <!-- 4. Verilmiş stringdə ən çox təkrarlanan simvolu və sayını qaytarır -->
+        <tr>
+          <td data-label="Tapşırıq və String">
+            Tapşırıq 4: Verilmiş stringdə ən çox təkrarlanan simvolu və sayını qaytarır
+            <br /><strong>String:</strong>
+            aaabbbcccdddaa
+          </td>
+          <td data-label="Kod">
+            <button onclick="toggleCode(4)">Kodu Göstər</button>
+            <div id="code4" class="code-block">
+              <pre><code>
+function mostFrequentChar(str) {
+  const charCount = {};
+  let maxChar = "";
+  let maxCount = 0;
+  str.split("").forEach(char => {
+    charCount[char] = (charCount[char] || 0) + 1;
+    if (charCount[char] > maxCount) {
+      maxChar = char;
+      maxCount = charCount[char];
+    }
+  });
+  return { character: maxChar, count: maxCount };
+}
+console.log(mostFrequentChar("aaabbbcccdddaa"));
+              </code></pre>
+            </div>
+          </td>
+          <td data-label="Nəticə">
+            <div id="result4" class="result-block"></div>
+          </td>
+        </tr>
+
+        <!-- 5. İki söz arasındakı sözləri qaytarır -->
+        <tr>
+          <td data-label="Tapşırıq və String">
+            Tapşırıq 5: İki söz arasındakı sözləri qaytarır <br /><strong>String:</strong>
+            bu çox maraqlı bir tapşırıqdır
+          </td>
+          <td data-label="Kod">
+            <button onclick="toggleCode(5)">Kodu Göstər</button>
+            <div id="code5" class="code-block">
+              <pre><code>
+function wordsBetween(str, word1, word2) {
+  const words = str.split(/\s+/);
+  const index1 = words.indexOf(word1);
+  const index2 = words.indexOf(word2);
+  if (index1 !== -1 && index2 !== -1 && index1 < index2) {
+    return words.slice(index1 + 1, index2);
+  } else {
+    return [];
+  }
+}
+console.log(wordsBetween("bu çox maraqlı bir tapşırıqdır", "bu", "bir"));
+              </code></pre>
+            </div>
+          </td>
+          <td data-label="Nəticə">
+            <div id="result5" class="result-block"></div>
+          </td>
+        </tr>
+
+        <!-- 6. Unikal simvolları tapır -->
+        <tr>
+          <td data-label="Tapşırıq və String">
+            Tapşırıq 6: Unikal simvolları tapır <br /><strong>String:</strong>
+            salam
+          </td>
+          <td data-label="Kod">
+            <button onclick="toggleCode(6)">Kodu Göstər</button>
+            <div id="code6" class="code-block">
+              <pre><code>
+function uniqueCharacters(str) {
+  const charCount = {};
+  const uniqueChars = [];
+  str.split("").forEach(char => {
+    charCount[char] = (charCount[char] || 0) + 1;
+  });
+  for (let char in charCount) {
+    if (charCount[char] === 1) {
+      uniqueChars.push(char);
+    }
+  }
+  return uniqueChars;
+}
+console.log(uniqueCharacters("salam"));
+              </code></pre>
+            </div>
+          </td>
+          <td data-label="Nəticə">
+            <div id="result6" class="result-block"></div>
+          </td>
+        </tr>
+
+        <!-- 7. Sözləri uzunluğuna görə sıralayır -->
+        <tr>
+          <td data-label="Tapşırıq və String">
+            Tapşırıq 7: Sözləri uzunluğuna görə sıralayır <br /><strong>String:</strong>
+            bu çox maraqlı bir tapşırıqdır
+          </td>
+          <td data-label="Kod">
+            <button onclick="toggleCode(7)">Kodu Göstər</button>
+            <div id="code7" class="code-block">
+              <pre><code>
+function sortByWordLength(str) {
+  return str.split(/\s+/).sort((a, b) => a.length - b.length);
+}
+console.log(sortByWordLength("bu çox maraqlı bir tapşırıqdır"));
+              </code></pre>
+            </div>
+          </td>
+          <td data-label="Nəticə">
+            <div id="result7" class="result-block"></div>
+          </td>
+        </tr>
+
+        <!-- 8. Hər bir sözü tərsinə çevirir -->
+        <tr>
+          <td data-label="Tapşırıq və String">
+            Tapşırıq 8: Hər bir sözü tərsinə çevirir <br /><strong>String:</strong>
+            "javascript dilləri öyrənmək çox maraqlıdır"
+          </td>
+          <td data-label="Kod">
+            <button onclick="toggleCode(8)">Kodu Göstər</button>
+            <div id="code8" class="code-block">
+              <pre><code>
+function reverseEachWord(str) {
+  return str.split(/\s+/).map(word => word.split("").reverse().join("")).join(" ");
+}
+console.log(reverseEachWord("javascript dilləri öyrənmək çox maraqlıdır"));
+              </code></pre>
+            </div>
+          </td>
+          <td data-label="Nəticə">
+            <div id="result8" class="result-block"></div>
+          </td>
+        </tr>
+
+        <!-- 9. Hər sözün ilk və son hərfini saxlayır -->
+        <tr>
+          <td data-label="Tapşırıq və String">
+            Tapşırıq 9: Hər sözün ilk və son hərfini saxlayır <br /><strong>String:</strong>
+            "javascript dilləri öyrənmək çox maraqlıdır"
+          </td>
+          <td data-label="Kod">
+            <button onclick="toggleCode(9)">Kodu Göstər</button>
+            <div id="code9" class="code-block">
+              <pre><code>
+function keepFirstAndLastChar(str) {
+  return str.split(/\s+/).map(word => word.length > 1 ? word[0] + word[word.length - 1] : word).join(" ");
+}
+console.log(keepFirstAndLastChar("javascript dilləri öyrənmək çox maraqlıdır"));
+              </code></pre>
+            </div>
+          </td>
+          <td data-label="Nəticə">
+            <div id="result9" class="result-block"></div>
+          </td>
+        </tr>
+
+        <!-- 10. İki sözün anagram olub olmadığını yoxlayır -->
+        <tr>
+          <td data-label="Tapşırıq və String">
+            Tapşırıq 10: İki sözün anagram olub olmadığını yoxlayır <br /><strong
+              >String:</strong
+            >
+            listen silent
+          </td>
+          <td data-label="Kod">
+            <button onclick="toggleCode(10)">Kodu Göstər</button>
+            <div id="code10" class="code-block">
+              <pre><code>
+function isAnagram(str1, str2) {
+  const cleanStr = str => str.replace(/[^a-z0-9ə]/gi, "").toLowerCase().split("").sort().join("");
+  return cleanStr(str1) === cleanStr(str2);
+}
+console.log(isAnagram("listen", "silent"));
+              </code></pre>
+            </div>
+          </td>
+          <td data-label="Nəticə">
+            <div id="result10" class="result-block"></div>
+          </td>
+        </tr>
+
+        <!-- 11. Hərəkətli mətn -->
+        <tr>
+          <td data-label="Tapşırıq və String">
+            Tapşırıq 11: Hərəkətli mətn <br /><strong>String:</strong>
+            Mətn
+          </td>
+          <td data-label="Kod">
+            <button onclick="toggleCode(11)">Kodu Göstər</button>
+            <div id="code11" class="code-block">
+              <pre><code>
+function marqueeEffect(text) {
+  let container = document.createElement('div');
+  container.style.whiteSpace = 'nowrap';
+  container.style.overflow = 'hidden';
+  container.style.width = '100%';
+  let span = document.createElement('span');
+  span.style.display = 'inline-block';
+  span.style.paddingRight = '100%';
+  span.textContent = text;
+  container.appendChild(span);
+  document.body.appendChild(container);
+}
+marqueeEffect("Mətn");
+              </code></pre>
+            </div>
+          </td>
+          <td data-label="Nəticə">
+            <div id="result11" class="result-block"></div>
+          </td>
+        </tr>
+
+        <!-- 12. Ən uzun palindromu tapın -->
+        <tr>
+          <td data-label="Tapşırıq və String">
+            Tapşırıq 12: Ən uzun palindromu tapın <br /><strong>String:</strong>
+            abcdcbaqwertyuiop
+          </td>
+          <td data-label="Kod">
+            <button onclick="toggleCode(12)">Kodu Göstər</button>
+            <div id="code12" class="code-block">
+              <pre><code>
+function findLongestPalindrome(str) {
+  const isPalindrome = s => s === s.split("").reverse().join("");
+  let longest = "";
+  for (let i = 0; i < str.length; i++) {
+      for (let j = i + 1; j <= str.length; j++) {
+          const substring = str.slice(i, j);
+          if (isPalindrome(substring) && substring.length > longest.length) {
+              longest = substring;
+          }
+      }
+  }
+  return longest;
+}
+console.log(findLongestPalindrome("abcdcbaqwertyuiop"));
+              </code></pre>
+            </div>
+          </td>
+          <td data-label="Nəticə">
+            <div id="result12" class="result-block"></div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <script src="app.js"></script>
+  </body>
+</html>
