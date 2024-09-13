@@ -1,0 +1,152 @@
+:root {
+    --bg-gradient: linear-gradient(135deg, #1f1c2c, #928dab);
+    --primary-color: #ff6363;
+    --secondary-color: #f9f3df;
+    --heart-inactive-color: #d3d3d3;
+    --font-color: whitesmoke;
+    --warning-color: darkred;
+    --base-font-size: .8rem; 
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: var(--base-font-size);
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    min-height: 100vh;
+    background: var(--bg-gradient);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--font-color);
+    margin: 0;
+}
+
+.feedback-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    max-width: 50rem; 
+    background-color: var(--secondary-color);
+    padding: 2rem;
+    border-radius: 2.5rem; 
+    color: var(--primary-color);
+    gap: 2rem;
+    box-shadow: 0px 0.4rem 1.5rem rgba(0, 0, 0, 0.2);
+}
+
+.feedback-title {
+    text-align: center;
+    color: var(--primary-color);
+    font-size: 2.4rem;
+}
+
+button {
+    display: block;
+    font-size: 1.6rem;
+    background-color: var(--primary-color);
+    padding: 1rem 4rem;
+    border: none;
+    border-radius: 1.5rem;
+    font-weight: bold;
+    color: var(--secondary-color);
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    max-width: 20rem; 
+    width: 100%;
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+.feedback-rating {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.heart {
+    font-size: 3.5rem;
+    color: var(--heart-inactive-color);
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.heart i.active {
+    color: var(--primary-color);
+}
+
+.heart:hover i {
+    color: var(--primary-color);
+}
+
+.warning-message {
+    font-weight: bold;
+    color: var(--warning-color);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    font-size: 1.4rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    body{
+        padding: .4rem;
+    }
+    .feedback-container {
+        padding: 1.5rem;
+        gap: 1.5rem;
+    }
+
+    .feedback-title {
+        font-size: 2rem;
+    }
+
+    .heart {
+        font-size: 3.5rem;
+    }
+
+    button {
+        font-size: 1.4rem;
+        padding: 1rem 3rem;
+    }
+
+    .warning-message {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .feedback-container {
+        width: 100%;
+        padding: 1rem;
+        border-radius: 1.5rem;
+    }
+
+    .feedback-title {
+        font-size: 1.4rem;
+    }
+
+    .heart {
+        font-size: 3rem;
+    }
+
+    button {
+        font-size: 1.2rem;
+        padding: 0.8rem 2.5rem;
+    }
+
+    .warning-message {
+        font-size: 1rem;
+    }
+}
